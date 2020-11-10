@@ -1,0 +1,84 @@
+{% extends "layout/base.twig" %}
+
+{% block content %}
+
+    <section class="content__section section-image">
+        <div class="viewport viewport--laptop">
+
+            <div class="section__grid">
+
+                <figure class="grid__item item--image">
+                    {% include 'components/picture.twig' with { 'image' : person.image, 'alt' : person.name } %}
+                </figure>
+
+                <div class="grid__item item--meta">
+
+                    <h1 class="header--no-margin">{{ person.name }}</h1>
+
+                    {% include 'components/tags.twig' with { 'tags' : person.tags, 'css' : 'person__tags' } %}					
+
+                </div>
+
+                <ul class="grid__item item--handles grid--two-columns">
+                    {% for handle in person.handles %}
+                        {% include 'listing/item-handle.twig' %}
+                    {% endfor %}
+                </ul>				
+
+            </div>
+
+        </div>
+    </section>
+
+    <section class="content__section section-about">
+        <div class="viewport viewport--laptop">
+
+
+            <div class="section__grid">
+
+                <div class="grid__item item--header">					
+                    <h2>{{ person.desc.header }}</h2>
+                </div>
+
+
+                <div class="grid__item item--text">
+
+                    {% for content in person.desc.text_block_1 %}
+                        <p>{{ content }}</p>
+                    {% endfor %}
+
+                </div>
+
+                <div class="grid__item item--text">
+
+                    {% for content in person.desc.text_block_2 %}
+                        <p>{{ content }}</p>
+                    {% endfor %}
+
+                </div>				
+
+            </div>
+
+
+        </div><!-- /viewport -->
+    </section>
+
+    <section class="content__section section-projects">
+        <div class="viewport">
+            <div class="section__header">
+                <h2>Selected works</h2>
+            </div>
+
+            <ul class="projects__list list--ui">
+
+                {% for project in person.projects %}
+
+                    {% include 'listing/item-project.twig' %}
+
+                {% endfor %}
+
+            </ul>
+        </div>
+    </section>
+
+{% endblock %}

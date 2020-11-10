@@ -1,0 +1,43 @@
+
+
+//path to assets dir, relative to outputted html
+$assetsPath: "..";
+
+//grid
+$grid-gutter-desktop: 2.75rem;
+$grid-gutter-lapotp: 2.75rem;
+$grid-gutter-mobile: 2rem;
+
+//vertical margins/paddings
+$vertical-whitespace-desktop: 6rem;
+$vertical-whitespace-mobile: 4rem;
+
+$modal-vertical-whitespace-desktop: 2.5rem;
+$modal-vertical-whitespace-mobile: 1.5rem;
+
+$modal-horizontal-whitespace-desktop: 2.5rem;
+$modal-horizontal-whitespace-mobile: .5rem;
+
+//colors
+$black: #151515;
+$white: #EFEFEF;
+$silver: #828282;
+$lightsilver: #9b9e9f;
+
+$viewport_width: 1680px; //magic number from xD source file
+
+$body-horizontal-padding: 2.5rem;
+$body-horizontal-padding-laptop: 1.875rem;
+$body-horizontal-padding-mobile: 1.5rem;
+
+$breakpoint_phone: 480px;
+$breakpoint_tablet-small: 640px;
+$breakpoint_tablet-portrait: 768px;
+$breakpoint_mobile: 960px;
+$breakpoint_tablet: 1024px;
+$breakpoint_desktop: 1180px;
+$breakpoint_laptop: 1440px;
+
+$breakpoint_hd: 1280px;
+$breakpoint_fullhd: 1920px;
+$breakpoint_wqhd: 2560px;

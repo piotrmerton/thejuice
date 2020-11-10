@@ -1,0 +1,102 @@
+<li class="list__item item--post item--media">
+
+    <div class="post__meta" data-item-index="meta-{{ loop.index }}">
+        <h2 class="post__title">{{ post.title }}</h2>
+        <h3 class="post__date">{{ post.date }}</h3>
+    </div>
+
+    <figure class="post__cover" data-item-index="cover-{{ loop.index }}">
+        <a 
+            class="do-toggle-modal ui-zoom" 
+            data-media-type="{{ post.media.type }}" 
+            data-modal-target="media-{{ loop.index }}"
+            
+            {% if post.media.videoId %}
+                data-video-id="{{ post.media.videoId }}"
+            {% endif %}
+
+            href="#">
+
+            {% include '../components/picture.twig' with { 'image' : post.media.thumb, 'alt' : post.title } %}
+            
+            {% if post.media.type == 'video' %}
+
+                <figure class="ui-ico ico--video">
+                    {{ source(root_assetsDir~'svg/ui/play.svg') }}
+                </figure>
+
+            {% elseif post.media.type == 'audio' %}
+
+                <figure class="ui-ico ico--audio">
+                    {{ source(root_assetsDir~'svg/ui/audio.svg') }}
+                </figure>
+
+            {% else %}
+
+                <figure class="ui-ico ico--cta">
+                    {{ source(root_assetsDir~'svg/ui/cta.svg') }}
+                </figure>
+
+            {% endif %}
+                
+        </a>
+
+    </figure>
+
+    
+    <div class="post__content" data-item-index="content-{{ loop.index }}">{{ post.content }}</div>
+
+
+    {# 
+        modal markup
+        
+        having it here is not ideal because we need to break out of parent container via CSS; the alternatives are: 
+
+        - have only inner modal__content markup and inject it dynamically in global modal placeholder that is already out of parent container
+        - render modal via browser (but it would require maintaing HTML markup in JS as well which can be messy especially without UI framework
+        - two loops: first for list, second for modal markup
+
+        but also it gives us a two big UX advantages: 
+        
+        - performance boost, because video's Vimeo API is initialized on page load and not on modal render, so opening modal with video feels way snappier for the user
+        - on closing and reopening modal the user can return to last moment of watched video without any additional JS because markup is already rendered and not overriden/reset by browser for other modal
+
+    #}
+
+    {% embed '../components/modal.twig' with { name : 'media-'~loop.index } %}
+
+        {% block modal_title %}
+            {{ post.title }}
+        {% endblock %}
+
+        {% block modal_content %}
+
+            {% if post.media.videoId %}
+
+                <figure class="video vimeo-player" data-video-id="{{ post.media.videoId }}"></figure>
+
+            {% else %}
+
+                <figure>
+                    <img src="{{ post.media.full }}" />
+                </figure>
+
+            {% endif %}
+            
+        {% endblock %}
+
+        {% if post.media.type == 'audio' %}
+
+            {% block modal_footer %}
+                <div class="modal__footer">
+                    {% include '../components/ui-audio.twig' %}
+                </div>
+            {% endblock %}
+
+        {% endif %}
+
+
+    {% endembed %}
+
+
+</li>

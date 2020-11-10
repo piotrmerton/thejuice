@@ -1,0 +1,57 @@
+page:
+   slug: talents
+   title: Talents
+
+# filters defined from within specific template will override global context
+filters:
+  - label: Directors
+    slug: directors
+    url: '#'
+
+  - label: Motion
+    slug: motion
+    url: '#'
+
+  - label: Sound
+    slug: sound
+    url: '#'
+
+  - label: Still
+    slug: still
+    url: '#'
+
+active_filters:
+  - directors
+
+people:
+  - type: talent
+    name: Alicja Cygan
+    tags:
+      - directors
+      - motion
+      - still    
+    image: assets/img/people/thumb/alicja-cygan.png
+
+  - type: talent
+    name: Andrzej Sykut
+    tags:
+      - directors
+      - motion
+      - still    
+    image: assets/img/people/thumb/andrzej-sykut.png
+
+  - type: talent
+    name: Kamil Kryński
+    tags:
+      - directors
+      - motion
+      - still    
+    image: assets/img/people/thumb/kamil-krynski.png
+
+  - type: talent
+    name: Karolina Kuna
+    tags:
+      - directors
+      - motion
+      - still    
+    image: assets/img/people/thumb/karolina-kuna.png

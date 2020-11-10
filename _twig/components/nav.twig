@@ -1,0 +1,14 @@
+{# nav is defined in global context, see _dev/yml/global.yml #}
+
+<nav class="{% if css %}{{ css }} {% endif %} nav--top">
+    <ul class="">
+        {% for item in nav %}
+
+            <li class="nav__item {% if item.slug == page.slug or item.slug == page.parent %} item--active{% endif %}">
+                <a href="{{ item.url }}">{{ item.label }}</a>
+            </li>
+
+        {% endfor %}
+    </ul>
+
+</nav>

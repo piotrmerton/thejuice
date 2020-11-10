@@ -1,0 +1,82 @@
+page:
+   slug: connect
+   title: Contact
+
+socialmedia_handles:
+  - label: ~Twitter
+    url: '#'
+  - label: ~Facebook
+    url: '#'
+  - label: ~Instagram
+    url: '#'
+  - label: ~Vimeo
+    url: '#'
+  - label: ~Linkedin
+    url: '#'    
+  - label: ~WeChat
+    url: '#'
+    qr: 'assets/img/qr/wechat.png'
+
+people_handles:  
+  - title: Production & Postproduction
+    label: '@Natalia Lasota'
+    url: '#'
+
+  - title: Design
+    label: '@Wojtek Piotrowski'
+    url: '#'
+
+  - title: PR & Marketing
+    label: '@Aleksandra Watras'
+    url: '#'
+
+  - title: Sound
+    label: '@Kuba Pietrzak'
+    url: '#'
+
+  - title: Recruiting
+    label: '@Anna Zimowska'
+    url: '#'                
+
+addresses:
+  - country: Poland
+    locations:
+      - city: Wrocław
+        street: Pułaskiego 52
+        zipcode: 50-443
+        phonenumbers: 
+          - +48 71 795 06 77
+      - city: Warsaw
+        street: ul. Lotników 1
+        zipcode: 00-976
+        phonenumbers: 
+          - +48 518 441 655
+    handles:
+      - title: General Inquires
+        label: '@Info'
+        url: '#'
+
+  - country: Japan
+    locations:
+      - city: Tokyo
+        street: 港区西麻布3-1-15 RFビル3F
+        zipcode: 〒106-0031
+        phonenumbers:
+            - +81 80 3360 6140 (EN)
+            - +81 80 5549 6140 (JP)
+    handles:
+        - title: Managing Director
+          label: '@Michał Dwojak-Hara'
+          url: '#'
+
+  - country: UK
+    locations:
+      - city: London
+        street: 85 Langthorne St
+        zipcode: SW6 6JU
+        phonenumbers:
+            - +44 7979 241 424
+    handles:
+        - title: Represented by
+          label: '@Sally Rigg'
+          url: '#'          

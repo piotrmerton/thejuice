@@ -1,0 +1,79 @@
+%generic-header {
+    font-family: 'Tungsten SemiBold', sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    line-height: 1;	
+    color: $white;
+    margin-bottom: 1.5rem;
+
+    &.header--no-margin {
+        margin: 0;
+    }
+}
+
+%generic-h1 {
+
+    @extend %generic-header;
+
+    font-size: 4.375em;
+
+    @media all and (max-width: $breakpoint_laptop) {
+        font-size: 3.875em;
+    }
+    @media all and (max-width: $breakpoint_mobile) {
+        font-size: 3.375em;
+    }
+}
+%generic-h2 {
+    @extend %generic-header;
+    font-size: 3.375em;
+
+    @media all and (max-width: $breakpoint_mobile) {
+        font-size: 2.75em;
+    }
+}
+%generic-h3 {
+    @extend %generic-header;
+
+    font-size: 1.5rem;
+}
+%generic-p {
+    font-size: 1.125em;
+    line-height: 1.33;
+
+    // @media all and (max-width: $breakpoint_mobile) {
+    // 	font-size: 1em;
+    // }
+
+    margin-bottom: 1rem;	
+}
+
+
+
+
+h1 {
+    @extend %generic-h1;
+}
+
+h2 {
+    @extend %generic-h2;
+
+}
+h3 {
+    @extend %generic-h3;
+    margin-bottom: 1rem;
+}
+h4 {
+    color: $silver;
+    font-size: 1.125em;
+    font-weight: normal;
+
+    @media all and (max-width: $breakpoint_mobile) {
+        font-size: 1rem;
+    }
+}
+
+
+p {
+    @extend %generic-p;
+}

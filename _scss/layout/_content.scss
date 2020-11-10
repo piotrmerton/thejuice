@@ -1,0 +1,27 @@
+//generic building block
+.content__section {
+    position: relative;
+
+    margin-bottom: 9rem;
+
+    @media all and (max-width: $breakpoint_laptop) {
+        margin-bottom: 6rem;
+    }
+    @media all and (max-width: $breakpoint_mobile) {
+        margin-bottom: 4rem;
+    }
+
+
+    .section__header {
+        h2 {
+            font-size: 2rem;
+
+        }
+        margin-bottom: 2rem;
+    }
+
+    &.section--no-margin {
+        margin: 0;
+    }
+
+}

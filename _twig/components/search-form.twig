@@ -1,0 +1,5 @@
+<form class="search-form" name="search-form">
+    <figure class="caret"></figure>
+    <input class="form__query query--input" type="text" name="query" {% if search_query %}value="{{ search_query}}"{% endif %} {# placeholder="Type to search" #} maxlength="20" />
+    {% if autocomplete %}<p class="form__autocomplete">{{ autocomplete }}</p>{% endif %}
+</form>

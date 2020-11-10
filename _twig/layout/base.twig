@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="{{ lang }}">
+
+<head>
+<meta charset="utf-8" />
+<meta name="robots" content="index,follow" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"> 
+
+<meta name="author" content="" />
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="" />
+<meta property="og:title" content="" />
+<meta property="og:description" content="" />
+<meta property="og:url" content="" />
+<meta property="og:site_name" content="" />
+<meta property="og:image" content="" />
+<meta property="og:image:width" content="" />
+<meta property="og:image:height" content="" />
+
+<base href="{{ base_dir }}">
+
+<link rel="shortcut icon" type="image/png" href="assets/favicon.ico" />
+
+{% block assetsHead %}
+	<link rel="stylesheet" type="text/css" href="assets/css/global.css">
+{% endblock %}
+
+<title>{{ page.title }}</title>
+
+</head>
+
+<body>
+
+	{% block body %}
+
+		<div class="page-container{% if filters is defined %} has--filters{% endif %}">
+
+			{% block header %}
+				{% include '../layout/header.twig' %}
+			{% endblock %}
+
+
+			{# 
+				content_type is for taxonomies like projects or posts to have one class for all items, because slug is ID-specific
+			#}
+			<section role="main" class="main-content content--{{ page.slug }}{% if page.content_type is defined %} content--{{ page.content_type }}{% endif %}">
+				{% block content %}
+					<p>Block content placeholder</p>
+				{% endblock %}
+			</section>
+			
+
+			{% block footer %}
+				{% include '../layout/footer.twig' %}
+			{% endblock %}
+
+		</div>
+
+	{% endblock %}
+
+	{% block before_body_end %}
+
+	{% endblock %}
+
+	{% block assetsBody %}
+		<script src="assets/js/global.js"></script>
+	{% endblock %}	
+
+</body>
+</html>
+

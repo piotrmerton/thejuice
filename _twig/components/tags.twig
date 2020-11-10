@@ -1,0 +1,21 @@
+<ul class="{% if css %}{{ css }} {% endif %}tags__list">
+    {% for tag in tags %}
+
+        {% if active_filters %}
+
+            {% if tag in active_filters %}
+
+                {% set selected = true %}
+
+            {% endif %}
+
+        {% elseif search_query and search_query|lower == tag %}
+
+            {% set selected = true %}
+
+        {% endif %}
+
+
+        <li class="list__item {% if selected %}item--active{% endif %}">{{ tag }}</li>
+    {% endfor %}
+</ul>

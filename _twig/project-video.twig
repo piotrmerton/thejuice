@@ -1,0 +1,251 @@
+{% extends "layout/base.twig" %}
+
+{% block header %}
+    {% include 'layout/header.twig' with { back : '#back-url' }%}
+{% endblock %}
+
+{% block content %}
+
+    <figure class="project__cover">
+        {% for media in project.gallery %}
+
+            {% if media.cover == true %}
+
+                <a class="do-toggle-project-gallery ui-zoom" data-slide="{{loop.index0}}" href="#">
+                    <img src="{{media.thumb.desktop}}" />
+
+                    <div class="cover__type">
+
+                        {% if media.type == 'image' %}
+
+                            <figure class="ui-ico ico--cta">
+                                {{ source(root_assetsDir~'svg/ui/cta.svg') }}									
+                            </figure>
+
+                        {% else %}
+
+                            {% if media.type == 'video' %}
+                                <figure class="ui-ico ico--cta">
+                                    {{ source(root_assetsDir~'svg/ui/play.svg') }}									
+                                </figure>
+                            {% endif %}
+
+                            {% if media.type == 'audio' %}
+
+                                <figure class="ui-ico ico--play">
+                                    {{ source(root_assetsDir~'svg/ui/play.svg') }}									
+                                </figure>
+
+                                <figure class="ui-ico ico--audio">
+                                    {{ source(root_assetsDir~'svg/ui/audio.svg') }}									
+                                </figure>
+                            {% endif %}
+
+                        {% endif %} 
+
+                    </div>
+                </a>
+
+            {% endif %}
+
+        {% endfor %}
+    </figure>
+
+
+    <section class="content__section project__info">
+
+        <div class="viewport viewport--fullhd">
+            <h1>{{ project.title }}</h1>
+
+            <div class="section__grid">
+                <dl class="grid__item item--meta project__meta">
+
+                    <dt>Client:</dt>
+                    <dd>{{ project.client }}</dd>
+
+                    <dt>Agency:</dt>
+                    <dd>{{ project.agency }}</dd>
+
+                </dl>
+
+                <p class="grid__item item--desc project__desc text--rich">
+                    {{ project.desc }}
+                </p>
+            </div>
+        </div>
+
+    </section>
+
+
+    {% if project.gallery|length > 1 %}
+        <section class="content__section project__gallery">
+            <div class="viewport">
+                <ul class="gallery__list">
+                    {% for media in project.gallery %}
+
+                        {% if media.cover is not defined or media.cover != true %}
+                            <li class="gallery__item">
+                                <a class="do-toggle-project-gallery ui-zoom" data-slide="{{loop.index0}}" href="#">
+                                    <img src="{{media.thumb.desktop}}" />
+
+                                    <figure class="ui-ico ico--cta">
+                                        {{ source(root_assetsDir~'svg/ui/cta.svg') }}									
+                                    </figure>
+
+                                </a>
+                            </li>
+                        {% endif %}
+
+                    {% endfor %}
+                </ul>
+            </div>
+        </section>
+    {% endif %}
+
+    <section class="content__section project__credits">
+
+        <div class="viewport viewport--fullhd">
+
+            <div class="section__grid grid--two-columns">
+
+                <div class="grid__item item--credits">
+
+                    <div class="section__header">
+                        <h2>{{ project.year }}</h2>
+                    </div>
+
+                    <ul class="credits__list grid--two-columns columns--tablet">
+                        {#
+
+                            dynamic markup based on item count in order to arrange credits vertically in two columns;
+                            
+                            there are alternatives but each with some caveats:
+                            - column-count offers no control over RWD, i.e. fixed column-width property
+                            - implicit grid and flex would require either fixed template rows or container height for vertical placement of items, also item in rows have match height 
+                            - float places items horizontally
+                            
+                        #}
+
+                        {% set perColumn = project.credits|length / 2 %}
+                        {% set firstColumn = perColumn|round(0, 'ceil') %}						
+
+                        {% for authors in project.credits %}
+
+                            {% if (loop.index == 1) or (loop.index == firstColumn + 1) %}
+                                <div>
+                            {% endif %}
+
+                                <li class="list__item item--credit">
+                                    <h4>{{ authors.role }}</h4>
+
+                                    <ul class="people__list">
+                                        {% for person in authors.people %}
+                                            <li class="list__item item--person">{{ person }}</li>
+                                        {% endfor %}
+                                    </ul>
+                                </li>
+
+                            {% if (loop.index == firstColumn) or (loop.index == loop.last) %}
+                                </div>
+                            {% endif %}						
+
+                        {% endfor %}
+
+                    </ul>
+
+                </div>
+
+                {% if project.awards %}
+
+                <div class="grid__item item--awards">
+                    
+                    <div class="section__header">
+                        <h2>Awards</h2>
+                    </div>
+
+                    <ul class="awards__list grid--two-columns">
+                    {% for award in project.awards %}
+
+                        <li class="list__item item--award">
+
+                            {% if award.image %}
+                                <figure class="award__ico">
+                                    <img src="{{ award.image }}" />
+                                </figure>
+                            {% endif %}
+
+                            <dl class="award__meta">
+                                <dt>{{ award.name }}</dt>
+                                <dd>{{ award.for }}</dd>
+                            </dl>
+
+                        </li>
+
+                    {% endfor %}
+                    </ul>
+
+                </div>
+
+                {% endif %}
+
+            </div><!-- /section__grid -->
+
+
+        </div>
+    </section>
+
+
+
+{% if project.related %}
+    <section class="content__section section-projects">
+        <div class="viewport">
+            <div class="section__header">
+                
+                <h2 class="header--no-margin">Related</h2>
+
+                <ul class="tags__list">
+                    {% for tag in project.related.tags %}
+
+                        <li><a href="#">{{ tag }}</a></li>
+
+                    {% endfor %}
+                </ul>
+            </div>
+
+            <ul class="projects__list list--ui">
+
+                {% for project in project.related.projects %}
+
+                    {% include 'listing/item-project.twig' %}
+
+                {% endfor %}
+
+            </ul>
+        </div>
+    </section>
+{% endif %}
+
+
+
+
+{% endblock %}
+
+
+{% block before_body_end %}
+
+    {% embed 'components/modal.twig' with { name : 'slider' } %}
+
+        {% block modal_layout %}
+
+            {% include 'components/project-slider.twig' %}
+
+            <a href="#" class="modal__ui ui--close do-toggle-modal" data-modal-target="slider">Close</a>
+
+        {% endblock %}
+
+
+    {% endembed %}
+
+    <script src="https://player.vimeo.com/api/player.js"></script>
+
+{% endblock %}

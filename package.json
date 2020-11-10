@@ -1,0 +1,37 @@
+{
+  "name": "thejuice",
+  "version": "2019.7.15",
+  "description": "",
+  "main": "_js/global.js",
+  "scripts": {
+    "build": "webpack --progress --colors --mode production --config webpack.base.config.js",
+    "watch": "webpack --progress --colors --watch --mode development --config webpack.base.config.js",
+    "twig": "webpack --progress --colors --mode production --config webpack.twig.config.js",
+    "twigWatch": "webpack --progress --colors --watch --mode development --config webpack.twig.config.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "homepage": "",
+  "devDependencies": {
+    "@babel/cli": "^7.5.5",
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "babel-loader": "^8.0.6",
+    "css-loader": "^0.28.11",
+    "html-webpack-inline-svg-plugin": "^1.2.4",
+    "html-webpack-plugin": "^3.2.0",
+    "js-yaml": "^3.13.1",
+    "mini-css-extract-plugin": "^0.5.0",
+    "node-sass": "^4.14.1",
+    "optimize-css-assets-webpack-plugin": "^5.0.1",
+    "raw-loader": "^1.0.0",
+    "sass-loader": "^6.0.7",
+    "twig-html-loader": "^0.1.5",
+    "webpack": "^4.38.0",
+    "webpack-cli": "^3.2.1",
+    "webpack-merge": "^4.2.1"
+  },
+  "dependencies": {
+    "tiny-slider": "^2.9.2"
+  }
+}

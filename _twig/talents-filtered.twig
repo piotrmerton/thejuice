@@ -1,0 +1,33 @@
+{% extends "layout/base.twig" %}
+
+{% block header %}
+    {% embed 'layout/header.twig' with { back : '#back-url' }%}
+
+        {% block filters %}
+
+            {% if filters is defined %}
+                {% include 'components/filters.twig' with { css : 'header__filters', search_results : true } %}
+            {% endif %}
+
+        {% endblock %}
+
+    {% endembed %}
+{% endblock %}
+
+{% block content %}
+
+    <section class="content__section section-talents">
+        <div class="viewport">
+            <ul class="talents__list list--filtered list--ui">
+
+                {% for item in people %}
+                    {% include 'listing/item-talent.twig' with { active : true } %}
+                {% endfor %}
+
+            </ul>
+
+
+        </div><!-- /viewport -->
+    </section>
+
+{% endblock %}

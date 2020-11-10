@@ -1,0 +1,21 @@
+// _twig/listing/item-address.twig
+.item--address {
+
+    address {
+        margin-bottom: 2rem;
+
+        p {
+            margin: 0;
+
+            @media all and (max-width: $breakpoint_mobile) {
+                font-size: 1rem;
+            }
+        }
+
+        li {
+            @extend %generic-p;
+            margin: 0;
+        }
+    }
+
+}

@@ -1,0 +1,108 @@
+.content--person {
+
+    .section-image {
+
+        .section__grid {
+
+            @extend %grid-default;
+
+            grid-template-rows: auto max-content;
+
+
+            .grid__item {
+                &.item--image {
+                    grid-row: auto / span 2;
+                }
+            }
+            
+            @media all and (min-width: $breakpoint_mobile + 1px) {
+
+                grid-template-columns: repeat(9, 1fr);
+                grid-row-gap: 3.5rem;
+
+                .grid__item {
+                    &.item--image {
+                        grid-column: auto / span 6;
+                        
+                        img {
+                            max-height: 560px;
+                        }
+
+                    }
+                    &.item--meta,
+                    &.item--handles {
+                        grid-column: auto / span 3;
+                        align-self: end;						
+                    }
+                }				
+            }
+
+
+            @media all and (max-width: $breakpoint_mobile) {
+                grid-template-columns: 3fr 2fr;
+                grid-row-gap: 2rem;
+
+            }
+
+            @media all and (max-width: $breakpoint_tablet-portrait - 1px) {
+
+                grid-template-columns: 1fr;
+
+                .grid__item {
+                    &.item--image {
+                        order: 2;						
+                    }
+                    &.item--meta {
+                        order: 1;
+                    }
+                    &.item--handles {
+                        order: 3;
+
+                        @media all and (min-width: $breakpoint_phone) {
+                            grid-template-columns: 1fr 1fr;
+                        }
+                    }
+                }
+
+            }
+
+
+        }
+
+    }
+
+    .section-about {
+
+        .section__grid {
+
+            @extend %grid-default;
+
+            
+            grid-template-columns: repeat(3, 1fr);
+
+            @media all and (max-width: $breakpoint_desktop) {
+
+                grid-template-columns: 2fr 3fr;
+
+                .grid__item {
+                    &.item--header {
+
+                        grid-row: auto / span 2;
+                        
+                    }
+                    &.item--text {
+                        
+                    }
+                }
+
+            }
+
+            @media all and (max-width: $breakpoint_tablet-portrait) {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+    }
+
+}

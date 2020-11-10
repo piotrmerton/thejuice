@@ -1,0 +1,204 @@
+page:
+   slug: talents
+   title: Talents
+
+# filters defined from within specific template will override global context
+filters:
+  - label: Directors
+    slug: directors
+    url: '#'
+
+  - label: Motion
+    slug: motion
+    url: '#'
+
+  - label: Sound
+    slug: sound
+    url: '#'
+
+  - label: Still
+    slug: still
+    url: '#'
+
+people:
+  - type: talent
+    name: Alicja Cygan
+    tags:
+      - directors
+      - motion
+      - still    
+    image: assets/img/people/thumb/alicja-cygan.png
+
+  - type: talent
+    name: Andrzej Sykut
+    tags:
+      - directors
+      - motion
+      - still    
+    image: assets/img/people/thumb/andrzej-sykut.png
+
+  - type: talent
+    name: Bartłomiej Spasowski
+    tags:
+      - directors
+      - motion
+      - still    
+    image: assets/img/people/thumb/bartlomiej-spasowski.png
+
+  - type: talent
+    name: Jarosław Handrysik
+    tags:
+      - directors
+      - motion
+      - still    
+    image: assets/img/people/thumb/jaroslaw-handrysik.png
+
+  - type: talent
+    name: Kamil Kryński
+    tags:
+      - directors
+      - motion
+      - still    
+    image: assets/img/people/thumb/kamil-krynski.png
+
+  - type: talent
+    name: Karolina Kuna
+    tags:
+      - directors
+      - motion
+      - still    
+    image: assets/img/people/thumb/karolina-kuna.png
+
+  - type: talent
+    name: Kuba Pietrzak
+    tags:
+      - directors
+      - motion
+      - still    
+    image: assets/img/people/thumb/kuba-pietrzak.png
+
+  - type: talent
+    name: Michał Jaroszewicz
+    tags:
+      - directors
+      - motion
+      - still    
+    image: assets/img/people/thumb/michal-jaroszewicz.png
+
+  - type: talent
+    name: Michal Misiński
+    tags:
+      - directors
+      - motion
+      - still    
+    image: assets/img/people/thumb/michal-misinski.png
+
+  - type: text
+    text: Short break from only visuals is essential
+
+  - type: talent
+    name: Natalia Lasota
+    tags:
+      - directors
+      - motion
+      - still    
+    image: assets/img/people/thumb/natalia-lasota.png
+    url: '#'
+
+  - type: talent
+    name: Olga Rabiecka
+    tags:
+      - directors
+      - motion
+      - still    
+    image: assets/img/people/thumb/olga-rabiecka.png
+    url: '#'
+
+  - type: talent
+    name: Patrycja Bos
+    tags:
+      - directors
+      - motion
+      - still    
+    image: assets/img/people/thumb/patrycja-bos.png
+    url: '#'
+
+  - type: talent
+    name: Piotr Koczan
+    image: assets/img/people/thumb/piotr-koczan.png
+    url: '#'
+
+  - type: talent
+    name: Przemysław Nawrocki
+    tags:
+      - directors
+      - motion
+      - still    
+    image: assets/img/people/thumb/przemyslaw-nawrocki.png
+    url: '#'
+
+  - type: talent
+    name: Radek Idczak
+    tags:
+      - directors
+      - motion
+      - still    
+    image: assets/img/people/thumb/radek-idczak.png
+    url: '#'
+
+  - type: talent
+    name: Selim Sykut
+    tags:
+      - directors
+      - motion
+      - still    
+    image: assets/img/people/thumb/selim-sykut.png
+    url: '#'
+
+  - type: talent
+    name: Tomasz Gulaga
+    tags:
+      - directors
+      - motion
+      - still    
+    image: assets/img/people/thumb/tomasz-gulaga.png
+    url: '#'
+
+  - type: text
+    text: Join us if you want to meet us
+
+  - type: talent
+    name: Tomasz Potakowski
+    tags:
+      - directors
+      - motion
+      - still    
+    image: assets/img/people/thumb/tomasz-potakowski.png
+    url: '#'
+
+  - type: talent
+    name: Wojtek Magierski
+    tags:
+      - directors
+      - motion
+      - still    
+    image: assets/img/people/thumb/wojtek-magierski.png
+    url: '#'
+
+  - type: talent
+    name: Wojtek Piotrowski
+    tags:
+      - directors
+      - motion
+      - still    
+    image: assets/img/people/thumb/wojtek-piotrowski.png
+    url: '#'
+
+  - type: talent
+    name: Zuzanna Galuszka
+    tags:
+      - directors
+      - motion
+      - still    
+    image: assets/img/people/thumb/zuzanna-galuszka.png
+    url: '#'

@@ -1,0 +1,21 @@
+site_title: thejuice
+lang: en
+
+base_url: 'index.html' # full URL to the home page of a site
+base_dir: '' # base file directory 
+base_assetsDir: '' # directory of assets/ folder
+root_assetsDir: '' # absolute path to root directory of assets/ folder 
+
+
+nav: 
+  - label: Talents
+    slug: talents
+    url: 'talents.html'
+
+  - label: News
+    slug: news
+    url: 'news.html'
+
+  - label: Connect
+    slug: connect
+    url: 'connect.html'

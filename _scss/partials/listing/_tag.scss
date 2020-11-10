@@ -1,0 +1,19 @@
+.tags__list {
+    display: flex;
+    flex-wrap: wrap;
+
+    li {
+        font-size: 1.5em;
+        font-family: 'Tungsten Semibold';
+        color: $lightsilver;
+        text-transform: uppercase;
+
+        &:not(:last-child) {
+            margin-right: .5rem;
+        }
+
+        &.item--active {
+            color: $white;
+        }
+    }
+}

@@ -1,0 +1,33 @@
+{% if item.type == 'talent' %}
+    
+    <li class="list__item item--talent{% if active %} item--active{% endif %}" data-item-index="{{ loop.index }}">
+        <a href="#">
+            <div class="item__meta">
+
+                <div class="meta__header">
+                    <h3 class="item__title">{{ item.name }}</h3>
+                    {% include '../components/tags.twig' with { 'tags' : item.tags, 'css' : 'item__tags' } %}
+                </div>
+
+                <div class="meta__footer">
+                    <figure class="ui-ico">
+                        {{ source(root_assetsDir~'svg/ui/cta.svg') }}
+                    </figure>
+                    <span>{{ item.name }} page</span>
+                </div>
+
+            </div>
+
+            <figure class="item__cover">
+                <img src="{{ item.image }}" />
+            </figure>
+        </a>
+    </li>
+
+{% elseif item.type == 'text' %}
+
+    <li class="list__item item--textbox" data-item-index="{{ loop.index }}">
+        <p>{{ item.text }}</p>
+    </li>
+
+{% endif %}

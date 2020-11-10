@@ -1,0 +1,38 @@
+{% extends "layout/base.twig" %}
+
+
+{# example how to override block within base.twig included templates:
+
+{% block header %}
+
+    {% embed 'layout/header.twig' %}
+
+        {% block submenu %}
+            <p>submenu overrided via template</p>
+        {% endblock %}
+
+    {% endembed %}
+
+{% endblock %} 
+
+#}
+
+{% block content %}
+
+    <section class="content__section section-projects">
+        <div class="viewport">
+            <ul id="projects" class="projects__list list--index list--ui">
+
+                {% for project in projects %}
+
+                    {% include 'listing/item-project.twig' %}
+
+                {% endfor %}
+
+            </ul>
+        </div>
+    </section>
+
+{% endblock %}
+
+

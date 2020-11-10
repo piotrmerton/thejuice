@@ -1,0 +1,68 @@
+.posts__list {
+
+    > li {	
+        &:not(:last-child) {
+            margin-bottom: 6rem;
+            @media all and (max-width: $breakpoint_mobile) {
+                margin-bottom: 4rem;
+            }
+        }		
+
+    }
+}
+
+// _twig/listing/item-post.twig
+.item--post {
+
+    > * {
+        will-change: opacity;
+        transition: opacity .2s ease-in-out;
+
+        //fade out while scroll out of the viewport (but only from the top)
+        &.item--faded {
+            opacity: .1;
+        }
+    }
+
+    .post__title {
+        margin: 0;
+    }
+
+    .post__cover {
+        margin: 2.5rem 0;
+        img {			
+            @media all and (min-width: $breakpoint_tablet-small) {
+                width: auto;
+                max-width: 100%;
+                max-height: 280px;				
+            }
+        }
+
+        a {
+            display: inline-grid;
+        }
+
+        .ui-ico {
+            &.ico--audio {
+                width: 7rem;
+                height: auto;				
+            }
+        }
+
+    }
+
+    .post__content {
+        max-width: 25rem;
+
+        a {
+            color: $white;
+
+            @media (hover: hover) {
+                &:hover {
+                    color: $silver;
+                }
+            }
+        }
+    }
+
+}

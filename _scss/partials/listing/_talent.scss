@@ -1,0 +1,118 @@
+.talents__list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+
+    @media all and (max-width: $breakpoint_laptop) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    @media all and (max-width: $breakpoint_desktop) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media all and (max-width: $breakpoint_tablet-small) {
+        grid-template-columns: repeat(1, 1fr);
+    }		
+
+    li {	
+        will-change: opacity;
+        transition: opacity .2s ease-in-out;
+
+        //fade out while scroll out of the viewport (but only from the top)
+        &.item--faded {
+            opacity: .1;
+        }	
+
+        &.item--textbox {
+            width: unset;
+            height: unset;
+            max-height: unset;
+        }
+
+    }
+
+    &.list--filtered {
+
+        &:not(.list--directors) {
+            .item--active {
+                &:not(:hover) {
+                    .meta__footer {
+                        opacity: 0;
+                    }
+                }
+            }			
+        }
+        &.list--directors {
+            @media all and (min-width: $breakpoint_tablet-small + 1px) {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            @media all and (min-width: $breakpoint_laptop) {
+                .list__item {
+                    .ui-ico {
+                        width: 4.5rem;
+                        height: 4.5rem;
+                        margin-right: 2rem;
+                    }					
+                }				
+            }
+        }
+
+    }
+}
+
+
+// _twig/listing/item-talent.twig
+.item--talent {
+
+    .item__cover {
+        height: 100%;
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;			
+        }
+    }
+
+    .item__meta {
+        display: grid;
+
+        .meta__header {
+            align-self: start;
+        }
+        .meta__footer {
+            align-self: end;
+
+            display: flex;
+            align-items: center;
+
+            will-change: opacity;
+            transition: opacity .2s ease-in-out;			
+
+
+            .ui-ico {
+                width: 2.5rem;
+                height: 2.5rem;
+                margin: 0 1rem 0 0;
+                opacity: .5;
+                transition: all .1s ease-in-out;
+            }
+
+            span {
+                display: block;
+                @extend %generic-h3;
+                margin: 0;
+            }
+
+            @media (hover: hover) {
+                &:hover {
+                    .ui-ico {
+                        opacity: 1;
+                        transform: scale(.9);
+                    }					
+                }
+            }			
+        }
+    }
+
+}

@@ -1,0 +1,33 @@
+{% if project.type != 'text' %}
+
+    <li class="list__item item--project project--{{ project.type }} {% if project.size == 'big' %} project--big{% endif %}{% if active %} item--active{% endif %}" data-item-index="{{ loop.index }}">
+        <a href="{{ project.url }}">
+
+            <div class="item__meta">
+                <h3 class="item__title">{{ project.title }}</h3>
+
+                {% include '../components/tags.twig' with { 'tags' : project.tags, 'css' : 'item__tags' } %}
+
+                {% if project.type == 'audio' %}
+
+                    <figure class="ui-ico ico--audio">
+                        {{ source(root_assetsDir~'svg/ui/audio.svg') }}
+                    </figure>
+
+                {% endif %}
+
+            </div>
+
+            <figure class="item__cover">
+                {% include '../components/picture.twig' with { 'image' : project.thumb, 'alt' : project.title } %}
+            </figure>
+        </a>
+    </li>
+    
+{% else %} 
+
+    <li class="list__item item--textbox" data-item-index="{{ loop.index }}">
+        <p>{{ project.text }}</p>
+    </li>
+
+{% endif %}

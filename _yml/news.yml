@@ -1,0 +1,51 @@
+page:
+   slug: news
+   title: News
+
+
+news:
+   #id - integer
+   #title - string
+   #date - string (it would be best to store timestamps in database especially if site is multilanguage)
+   #media - object
+      #type - string, either 'image' or 'video'
+      #thumb - object with desktop/mobile/tablet keys (desktop is required, mobile and tablet are optional), values are string with urls relative to outputted html
+      #full - url to full image that will be displayed in fullscreen modal
+      #videoId - this is required only if {type} is {video}; can be url string to Vimeo or integer with Vimeo video ID
+   #content - html string
+   #url - string
+
+   -  id: 1
+      title: Mitsubishi Engelberg Tourer - Concept Car
+      date: April 12th, 2019
+      media:
+         type: image
+         thumb: 
+            desktop: assets/img/news/thumb/1.png
+         full: assets/img/news/full/1.png
+      content: <p>It was exhausting but at the same time extremely satisfying! Working with 100 people from all over the world is an experience we value most. Thank you for your amazing work! These stills are our fav. See more at <a href="//twitter.com">~Twitter</a></p>
+      url: '#'
+
+   -  id: 2
+      title: Gorilla from Juice Art Team
+      date: March 27th, 2019
+      media:
+         type: image
+         thumb: 
+            desktop: assets/img/news/thumb/2.png
+         full: assets/img/news/full/2.png
+      content: 
+         <p>A lot of heart and hard work to create this magnificent Gorilla. Fortunately, Jarosław Handrysik – Lighting & Grooming Artist knows his job very, very well.</p><p>This was made for Casio G-Shock ad in 2018.</p>
+         <p>See more at <a href="//twitter.com">~Twitter</a></p>
+      url: '#'
+
+   -  id: 3
+      title: Mitsubishi Engelberg Tourer - Concept Car
+      date: Aptil 12th, 2019
+      media:
+         type: video
+         thumb: 
+            desktop: assets/img/news/thumb/3.png
+         videoId: 337487546
+      content: <p>It was exhausting but at the same time extremely satisfying! Working with 100 people from all over the world is an experience we value most. Thank you for your amazing work! These stills are our fav. See more at <a href="//twitter.com">~Twitter</a></p>
+      url: '#'

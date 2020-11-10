@@ -1,0 +1,135 @@
+page:
+   slug: michal-misinski
+   content_type: person
+   parent: talents
+   title: Michał Misiński
+
+person:
+   name: Michał Misiński
+   image:
+      desktop: assets/img/people/full/michal-misinski.png
+   tags:
+      - motion
+      - still
+      - directors
+   handles:
+      - title: Connect
+        label: '@MichalMisinski'
+        url: '#'
+      - title: More
+        label: ~Vimeo
+        url: '#'        
+   desc:
+      header: '"I live for this shit" <br />Vin Diesel, XXX'
+      text_block_1:
+         - 'Co-creator of Project 2051: Homage to Ghost in the Shell. A non-commercial, contemporary adaptation of renowned Shirow Masamune’s manga, directed by Ash Thorp.'
+         - 'Responsible for the art direction of the “Ares: Our Greatest Adventure” trailer, promoting the Oscar-nominated movie “The Martian”, directed by Ridley Scott.'
+         - He directed and co-created the opening and closing cinematics for Trojan Horse Was A Unicorn. An animation and design festival taking place in Tróia, Portugal.
+      text_block_2:
+         - Also played a key role in defining the artistic vision and supervised projects such as teaser/trailer for the well-known television series Vikings and 2014 Sochi Winter Olympics promotional campaign created for BBC for which the studio received a prestigious BAFTA award a year later.
+         - Since 2007 he directed, art directed and co-created over one hundred commercial and non-commercial campaigns and films for international clients including Nike, BMW, Toyota, Audi, Ubisoft, Gaijin Entertainment.
+   projects:
+      -  id: 2
+         title: 'Bentley UE4'
+         type: video
+         tags:
+            - motion
+            - automotive
+            - commercial
+         url: '#'
+         thumb: 
+            desktop : assets/img/projects/listing/2.png      
+         size: normal
+      -  id: 3
+         title: 'Toyota C-HR - Crossover The World'
+         type: video
+         tags:
+            - motion
+            - sound
+            - automotive
+            - commercial
+         url: '#'
+         thumb: 
+            desktop : assets/img/projects/listing/3.png       
+         size: normal
+   
+      -  id: 4
+         title: 'Milkana'
+         type: audio
+         tags:
+            - sound
+         url: '#'
+         thumb: 
+            desktop : assets/img/projects/listing/4.png
+         size: normal
+
+      -  id: 5
+         title: 'TEDxWarsaw 2018 - Men & Women'
+         type: video
+         tags:
+            - motion
+            - sound
+            - automotive
+            - commercial
+         url: '#'
+         thumb: 
+            desktop: assets/img/projects/listing/5.png
+         size: normal
+
+      -  id: 6
+         title: 'Nutrilite - Farm'
+         type: video
+         tags:
+            - motion
+            - commercial
+         url: '#'
+         thumb: 
+             desktop: assets/img/projects/listing/6.png
+         size: normal
+
+      -  id: 7
+         title: 'Pioneer - Smarty Sync'
+         type: video
+         tags:
+            - motion
+            - automotive
+            - commercial
+         url: '#'
+         thumb: 
+             desktop: assets/img/projects/listing/7.png
+         size: normal
+
+      -  id: 8
+         title: 'IPN - The Unconcquered'
+         type: video
+         tags:
+            - motion
+            - animation
+         url: '#'
+         thumb: 
+             desktop: assets/img/projects/listing/8.png
+         size: normal
+
+      -  id: 9
+         title: 'Audi A7 Sportback - Run'
+         type: video
+         tags:
+            - motion
+            - automotive
+            - commercial
+         url: '#'
+         thumb: 
+             desktop: assets/img/projects/listing/9.png
+         size: normal
+
+      -  id: 10
+         title: 'Audi A7 Sportback - Run'
+         type: video
+         tags:
+            - motion
+            - automotive
+            - commercial
+         url: '#'
+         thumb: 
+             desktop: assets/img/projects/listing/10.png
+         size: normal

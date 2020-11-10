@@ -1,0 +1,33 @@
+<div class="{% if css %}{{ css }} {% endif %}filters-component{% if search_results %} filters--filtered{% endif %}">
+    <div class="viewport">
+        <nav class="filters__nav">
+            <ul class="filters__list">
+
+                {% for filter in filters %}
+
+                    {% if active_filters %}
+
+                        {% if filter.slug in active_filters %}
+
+                            {% set selected = true %}
+
+                        {% endif %}
+
+                    {% endif %}
+
+                    <li class="list__item item--filter {% if selected %}item--active{% endif %}">
+                        <a href="{{ filter.url }}">{{ filter.label }}</a>
+                    </li>
+
+                {% endfor %}
+
+                    <li class="list__item item--form">
+
+                        {% include 'search-form.twig' %}
+
+                    </li>
+
+            </ul>
+        </nav>
+    </div>
+</div>

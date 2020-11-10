@@ -1,0 +1,72 @@
+{# each slide emulates modal layout, see components/modal.twig for markup reference 
+
+    basically it is down to
+
+    modal__layout
+        modal__header
+        modal__content
+        modal__footer
+
+#}
+
+<div class="project__slider">
+
+    <ul class="slider__list">
+        {% for media in project.gallery %}
+
+            <li class="slide__item item--{{media.type}}" data-media-id="{{media.id}}" data-slide="{{loop.index0}}">
+
+                <div class="modal__layout">
+                    <div class="modal__header">
+                        <h2 class="modal__title">{{ project.title }}</h2>
+                    </div>
+
+                    <div class="modal__content">
+                    
+                        {% if media.type == 'image' %}
+                            <figure>
+                                <img src="{{media.thumb.desktop}}" />
+                            </figure>
+                        {% endif %}
+
+                        {% if media.videoId %}
+
+                        {#	
+                            simple embed would work but we need more control over videos (i.e. to stop on modal close or slide change) so Vimeo Player SDK must be used, see: https://developer.vimeo.com/player/sdk/basics (which works almost identical to YouTube iFrame API)
+
+                            <iframe src="https://player.vimeo.com/video/?title=0&byline=0&portrait=0" frameborder="0" allow="autoplay"></iframe> 
+
+                        #}
+
+                        <figure class="video vimeo-player" data-video-id="{{ media.videoId }}"></figure>
+
+                        {% endif %}
+
+                    </div>
+
+                    <div class="modal__footer">
+                        {% if media.type == 'audio' %}
+                            {% include 'ui-audio.twig' %}
+                        {% endif %}
+                    </div>
+                </div>
+                
+            </li>
+
+        {% endfor %}
+    </ul>
+
+    <nav class="slider__nav">
+        <a class="nav__item item--prev" href="#">
+            <figure class="ui-ico">
+                {{ source(root_assetsDir~'svg/ui/controls-alt.svg') }}
+            </figure>						
+        </a>
+        <a class="nav__item item--next" href="#">
+            <figure class="ui-ico">
+                {{ source(root_assetsDir~'svg/ui/controls-alt.svg') }}
+            </figure>							
+        </a>
+    </nav>
+
+</div>

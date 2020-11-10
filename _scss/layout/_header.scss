@@ -1,0 +1,105 @@
+.header-top {
+    width: 100%;
+
+    z-index: 99;
+    
+
+    a {
+        display: block;
+    }
+
+    @media all and (min-width: $breakpoint_mobile + 1px) {
+        position: sticky;
+        position: -webkit-sticky; //Safari fix
+        top: 0;		
+    }
+    @media all and (max-width: $breakpoint_mobile) {
+        .header__layout {
+            width: 100%;
+            position: fixed;
+            z-index: 99;
+            top: 0;			
+            left: 0;
+            padding-left: $body-horizontal-padding-mobile;
+            padding-right: $body-horizontal-padding-mobile;
+        }
+        .header__filters {
+            margin-top: 100px;
+        }
+    }
+
+
+}
+
+
+.header__layout {
+    display: grid;
+    grid-template-columns: max-content auto max-content;
+    grid-column-gap: 2rem;
+    padding: 2.5rem 0;
+    align-items: center;
+
+    @media all and (max-width: $breakpoint_laptop) {
+        padding: 2rem 0;
+    }
+    @media all and (max-width: $breakpoint_mobile) {
+        padding: 1.5rem 0;
+    }
+}
+
+.header__logo {
+    display: block;
+
+    figure {
+        height: 1rem;
+    }
+
+    svg {
+        width: auto;
+        height: 100%;
+    }
+}
+
+.header__branding {
+    display: grid;
+    grid-auto-flow: column;
+    grid-column-gap: 2rem;
+    align-items: center;	
+    min-height: 2rem; //make sure the header is always the same height even if lsaquo (back) symbol isn't displayed
+}
+
+.header__back {
+    color: $white;
+    font-size: 1.5em;
+}
+
+.header__lang {
+
+    justify-self: end;
+    display: flex;
+    .lang__item {
+        &.item--active {
+            a {
+                color: $white;
+            }
+        }
+        &:not(:last-child) {
+            margin-right: 2.375rem;
+        }
+    }
+
+    @media all and (max-width: $breakpoint_phone) {
+        display: none;
+    }
+}
+
+.header__filters {
+    margin-bottom: 6rem;
+    @media all and (max-width: $breakpoint_laptop) {
+        margin-bottom: 4.5rem;
+    }
+    @media all and (max-width: $breakpoint_mobile) {
+        margin-bottom: 4rem;
+    }
+}
+

@@ -1,0 +1,17 @@
+//twig/components/nav.twig
+.nav--top {
+    ul {
+        display: flex;
+
+        li {
+            &:not(:last-child) {
+                margin-right: 2rem;
+            }
+            &.item--active {
+                a {
+                    color: $white;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,20 @@
+{% extends "layout/base.twig" %}
+
+{% block content %}
+
+    <section class="content__section section-talents">
+        <div class="viewport">
+            <ul class="talents__list list--ui">
+
+                {% for item in people %}
+
+                    {% include 'listing/item-talent.twig' %}
+
+                {% endfor %}
+
+            </ul>
+
+        </div><!-- /viewport -->
+    </section>
+
+{% endblock %}

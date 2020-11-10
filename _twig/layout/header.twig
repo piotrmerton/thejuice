@@ -1,0 +1,32 @@
+<header id="header-top" class="header-top">
+
+	<section class="header__layout">
+
+
+		<div class="header__branding">
+			{% if back %}
+				<a class="header__back" href="{{ back }}">&lsaquo;</span>
+			{% endif %}
+			<a class="header__logo" href="{{ base_url }}">
+				<figure>
+					{{ source(root_assetsDir~'svg/logo.svg') }}
+				</figure>					
+			</a>
+		</div>
+
+		{% include '../components/nav.twig' with { css : 'header__nav' } %}
+
+		<ul class="header__lang">
+			<li class="lang__item item--active"><a href="#">En</a></li>
+			<li class="lang__item"><a href="#">Jp</a></li>
+		</ul>
+
+	</section>
+
+	{% block filters %}
+		{% if filters is defined %}
+			{% include '../components/filters.twig' with { css : 'header__filters' } %}
+		{% endif %}
+	{% endblock %}
+
+</header>

@@ -1,0 +1,16 @@
+<picture>
+    {% if image.mobile %}
+        <source media="(max-width: 480px)"
+        srcset="{{ image.mobile }}">	
+    {% endif %}
+
+    {% if image.tablet %}
+        <source media="(max-width: 1024px)"
+        srcset="{{ image.tablet }}">
+    {% endif %}
+
+    <source media="(min-width: 960px)"
+    srcset="{{ image.desktop }}">
+
+    <img src="{{ image.desktop }}" {% if alt %}alt="{{ alt }}"{% endif %} />
+</picture>	

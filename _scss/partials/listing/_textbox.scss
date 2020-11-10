@@ -1,0 +1,48 @@
+//text-only item present on projects__list and talents__list
+
+.item--textbox {
+    padding: 2rem;
+    width: 420px;	
+    max-height: 280px;
+    
+    p {		
+        font-family: 'Tungsten SemiBold';
+        font-size: 3.375em;
+        text-transform: uppercase;
+        line-height: 1.2; // 65:54;
+        color: $white;
+    }
+
+    @media all and (max-width: $viewport_width) {
+        p {
+            font-size: 3em;
+        }
+    }
+
+    @media all and (max-width: $breakpoint_laptop) {
+        width: 360px;
+        max-height: 240px;
+        p {
+            font-size: 2.5em;
+        }
+    }
+    @media all 
+        and (max-width: $breakpoint_desktop) 
+        and (min-width: $breakpoint_tablet-portrait) {
+            width: 50%;
+    }	
+
+    @media all and (max-width: $breakpoint_phone) {
+        padding: 4rem 2rem;
+        p {
+            font-size: 2em;
+        }
+    }
+
+    @media (hover: hover) {
+        &:hover {
+            opacity: 1 !important; //override for row-based class			
+        }
+    }
+
+}

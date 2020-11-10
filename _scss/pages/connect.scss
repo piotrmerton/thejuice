@@ -1,0 +1,155 @@
+.section-contact {
+
+    .section__header {
+        margin-bottom: $vertical-whitespace-desktop;
+
+        @media all and (max-width: $breakpoint_mobile) {
+            margin-bottom: $vertical-whitespace-mobile;
+        }
+    }
+
+    .section__grid {
+
+        @extend %grid-default;
+
+        max-width: 1520px;		
+
+        grid-row-gap: $vertical-whitespace-desktop;
+
+        @media all and (min-width: $breakpoint_laptop + 1px) {
+            grid-template-columns: repeat(10, 1fr);
+        }
+
+        @media all and (max-width: $breakpoint_mobile) {
+            grid-row-gap: $vertical-whitespace-mobile;
+        }		
+
+        .grid__item {
+
+            &.item--about {
+
+                @media all and (min-width: $breakpoint_mobile + 1px) {
+                    grid-column: auto / span 3;
+                    grid-row: span 2;
+                    min-width: 25rem;
+                }
+
+                @media all and (max-width: $breakpoint_mobile) {
+                    p {
+                        max-width: 25rem;
+                    }
+                }
+
+            }
+
+            &.item--people,
+            &.item--addresses {
+
+                grid-column: 5 / -1;
+
+                @media all and (max-width: $breakpoint_laptop) {
+                    grid-column-start: 6;
+                }
+
+                @media all and (max-width: $breakpoint_desktop) {
+                    grid-column-start: 7;
+                }		
+
+                @media all and (max-width: $breakpoint_mobile) {
+                    grid-column: 1 / -1;
+                }						
+
+                .item__subgrid {
+                    @extend %grid-default;
+                    grid-template-columns: repeat(3, 1fr);
+                    grid-row-gap: 2rem;
+
+                    @media all and (max-width: $breakpoint_laptop) {
+                        grid-template-columns: repeat(2, 1fr);
+                    }
+
+                    @media all and (max-width: $breakpoint_phone) {
+                        grid-template-columns: 1fr;
+                    }					
+
+                }
+
+            }
+
+            &.item--people {
+                .item__subgrid {
+
+                    @media all and (min-width: $breakpoint_tablet-small + 1px) {
+                        grid-template-rows: repeat(3, 1fr);
+                        grid-auto-flow: column;
+                    }
+
+                }
+            }
+
+            @media all and (max-width: $breakpoint_mobile) {
+                grid-column: 1 / -1;
+            }
+
+        }
+
+    }
+}
+
+.social-media__list {
+
+    margin-top: $vertical-whitespace-desktop;
+
+
+
+    @extend %grid-default;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-row-gap: .25rem;
+    grid-auto-flow: column;
+
+    @media all and (max-width: $breakpoint_mobile) {
+        margin-top: $vertical-whitespace-mobile;
+
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-flow: row;
+    }
+
+    li {
+        
+        position: relative;
+
+        .item__qr {
+
+            visibility: hidden;
+            position: absolute;
+            z-index: 2;
+            width: 10.5rem;
+            height: 10.5rem;
+            transform: translateX(-25%);
+            
+            img {
+                padding: .75rem;
+                background: $white;
+                transition: opacity .2s ease-in-out;
+                opacity: 0;
+            }
+        }
+
+        @media (hover: hover) {
+            &:hover {
+                .item__qr {
+                    visibility: visible;
+                    img {
+                        opacity: 1;
+                    }
+                }		
+                a {
+                    color: $silver;
+                }		
+            }
+
+        }
+    }
+
+}

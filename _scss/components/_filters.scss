@@ -1,0 +1,54 @@
+.filters-component {
+
+    max-width: $breakpoint_desktop;
+
+    .filters__list {
+        display: flex;
+        flex-wrap: wrap;
+
+        li {
+            &:not(:last-child) {
+                margin-right: 1rem;
+            }
+        }
+
+        a {
+
+            display: flex;
+            align-items: center;
+
+            @extend %generic-h1;
+
+            
+            margin: 0;
+
+
+        }
+    }
+
+
+    //modifier for active filters or search results
+    &.filters--filtered {
+        a {
+            color: $silver;
+
+            @media (hover: hover) {
+
+                &:hover {
+                    color: $white;
+                }
+
+            }
+
+        }
+
+        .filters__list {
+            .item--active {
+                a {
+                    color: $white;
+                }
+            }
+        }
+    }
+
+}

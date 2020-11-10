@@ -1,0 +1,28 @@
+{% extends "layout/base.twig" %}
+
+{% block header %}
+    {% embed 'layout/header.twig' with { back : '#back-url' }%}
+
+        {% block filters %}
+
+            {% if filters is defined %}
+                {% include 'components/filters.twig' with { css : 'header__filters', search_results : true } %}
+            {% endif %}
+
+        {% endblock %}
+
+    {% endembed %}
+{% endblock %}
+
+{% block footer %}
+{% endblock %}
+
+{% block content %}
+
+    <div class="ui-message">
+        <p>Would be nice, we still need to try it</p>
+    </div>
+
+{% endblock %}
+
+

@@ -1,0 +1,270 @@
+// twig/pages/project.twig
+
+// project__slider moved to scss/components/project-slider.scss
+
+.project__cover {
+
+    margin-bottom: 3.5rem;
+
+    @media all and (max-width: $breakpoint_mobile) {
+        margin-bottom: 3rem;
+    }
+
+    img {
+        width: auto;
+        max-width: 100%;
+        max-height: 640px;
+    }
+
+    //override generic ui-zoom pattern, see base/ui.scss
+    > a {
+        display: inline-grid;
+
+        .cover__type {
+            align-self: center;
+            justify-self: center;
+            opacity: .5;
+            transition: all .1s ease-in-out;
+
+            display: grid;
+            grid-auto-flow: column;
+            grid-column-gap: 4rem;
+            align-items: center;
+
+            @media all and (max-width: $breakpoint_mobile) {
+                grid-column-gap: 2rem;
+            }
+
+        }
+
+        @media (hover: hover) {
+            &:hover {
+                > .cover__type {
+                    &:hover {
+                        opacity: 1;
+                        transform: scale(.95);						
+                    }
+                }
+            }
+        }		
+    }
+
+
+    .ui-ico {
+        width: 4.5rem;
+        height: 4.5rem;
+
+        &.ico--audio {
+            width: 7rem;
+        }
+
+        @media all and (max-width: $breakpoint_mobile) {
+            width: 3rem;
+            height: 3rem;
+
+            &.ico--audio {
+                width: 5rem;
+            }
+        }
+    }
+}
+
+
+.project__info {
+
+    @media all and (max-width: $breakpoint_mobile) {
+        h1 {
+            margin: 0;
+        }
+        margin-bottom: 5.5rem;
+    }
+
+
+
+    .section__grid {
+
+        @extend %grid-default;
+
+        @media all and (min-width: $breakpoint_tablet + 1px) {
+
+            grid-template-columns: repeat(10, 1fr);
+            max-width: 1520px;
+
+            .grid__item {
+                &.item--meta {
+                    grid-column: 1 / span 5;
+                }
+                &.item--desc {
+                    grid-column: 7 / -1;
+                }
+            }			
+
+        }
+
+        @media all and (max-width: $breakpoint_tablet) {
+
+            grid-template-columns: 1fr 1fr;
+
+        }
+
+        @media all and (max-width: $breakpoint_mobile) {
+
+            grid-template-columns: 1fr;
+
+            grid-row-gap: 3.5rem;
+        }
+
+    }
+}
+
+.project__meta {
+
+    dt,
+    dd {
+        @extend %generic-header;
+        font-size: 2rem;
+        margin-bottom: .5rem;
+
+        @media all and (max-width: $breakpoint_mobile) {
+            font-size: 1.5rem;
+            margin: 0;
+        }
+    }
+
+    dt {
+        float: left;
+        margin-right: .25rem;
+    }
+}
+
+
+
+.project__gallery {
+
+    img {
+        max-height: 320px;
+    }
+
+    .gallery__list {
+        display: flex;
+        flex-wrap: wrap;
+        li {
+            &:first-child {
+                img {
+                    max-height: 640px;
+                }
+            }
+        }	
+
+        @media all and (max-width: $breakpoint_laptop) and (min-width: $breakpoint_tablet-portrait) {
+            li {
+                &:not(:first-child) {
+                    width: 50%;
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        max-height: unset;
+                        object-fit: cover;
+                    }
+                }
+                
+            }
+        }	
+
+        @media all and (max-width: $breakpoint_mobile) {
+            margin-bottom: 5.5rem;
+        }
+    }
+
+}
+
+
+.project__credits {
+    margin-bottom: 5.5rem;
+    
+    .section__grid {
+        @extend %grid-default;
+        grid-row-gap: 3.5rem;
+
+        @media all and (min-width: $breakpoint_tablet + 1px) {
+
+            grid-template-columns: repeat(10, 1fr);
+            max-width: 1520px;
+
+            .grid__item {
+                &.item--credits {
+                    grid-column: 1 / span 6;
+                }
+                &.item--awards {
+                    grid-column: 7 / -1;
+                }
+            }			
+
+        }
+
+        @media all and (max-width: $breakpoint_tablet) {
+
+            grid-template-columns: 1fr;
+
+        }
+
+    }
+
+}
+
+.credits__list {
+
+    grid-row-gap: 1.5rem;
+
+    h4 {
+        font-size: 1rem;
+    }
+        
+    /*
+        - grid would need additional wrappers in order to counter row spanning and arrange items vertically or fixed rows template
+        - flex would need fixed height or additional wrappers for columns
+        - float arranges items horizontally
+    */
+
+    .item--credit {
+        &:not(:last-child) {
+            margin-bottom: 1.5rem;
+        }
+    }
+
+    .item--person {
+        display: inline;
+        color: $white;
+
+        &:not(:last-child) {
+            &:after {
+                display: inline;
+                content: ', '
+            }
+        }
+    }
+}
+
+.awards__list {
+
+
+    @media all and (min-width: $breakpoint_tablet-small) {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    align-items: start;
+
+    .item--award {
+        display: flex;
+        align-items: center;		
+    }
+
+    img {
+        width: auto;
+        max-height: 5rem;
+        margin-right: 1.375rem;
+    }
+}
+
+

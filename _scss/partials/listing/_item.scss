@@ -1,0 +1,95 @@
+//generic list__item that is both shared by item--project and item--talent
+
+.list__item {
+
+    > a {
+        display: grid;
+        height: 100%;
+        text-decoration: none;
+        color: $white;
+
+        > * {
+            grid-column-start: 1;
+            grid-row-start: 1;
+        }
+
+    }
+
+
+
+    .item__meta {
+        padding: 1.5rem;
+        
+        position: relative;
+        z-index: 2; //above item__cover
+        
+        background: rgba($black, .75);
+        
+        opacity: 0;
+        will-change: opacity;
+        transition: opacity .2s ease-in-out, background .2s ease-in-out;
+
+        h3 {
+            margin-bottom: 0;
+        }
+
+    }
+
+    //modifiers
+
+    //reveal meta content on hover, if device supports it...
+    @media (hover: hover) {
+        &:hover {
+            opacity: 1;
+            .item__meta {
+                opacity: 1;
+            }			
+        }
+    }
+
+    //...or reveal it on touch (see _js/UI.grid.hoverToTouch() )
+    // this class is also default for search-results, where description is revealed by default
+    &.item--active {
+        opacity: 1;
+
+        .item__meta {
+            opacity: 1;
+
+            @media (hover: hover) {
+                //hide title on hover (Juice_Web_FilterResults5_02) ?
+
+                // .item__title,
+                // .item__tags {
+                // 	will-change: opacity;
+                // 	transition: opacity .2s ease-in-out;					
+                // }
+                &:hover {
+                    
+                    // .item__title,
+                    // .item__tags {
+                    // 	opacity: 0;
+                    // }
+                    background: rgba($black, .25);
+                }
+            }
+        }		
+    }
+
+
+    @media all and (max-width: $breakpoint_mobile) {
+        .item__tags {
+            display: none;
+        }
+    }
+
+
+}
+
+//real time suggestions that match search query while typing are displayed slightly dimmed
+.list--autocomplete {
+    .list__item {
+        &:not(:hover) {
+            opacity: .75;
+        }
+    }
+}

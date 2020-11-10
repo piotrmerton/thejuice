@@ -1,0 +1,25 @@
+{% extends "layout/base.twig" %}
+
+{% block content %}
+
+    <section class="content__section section-posts">
+        <div class="viewport">
+
+            <ul class="posts__list">
+                {% for post in news %}
+                    {% include 'listing/item-post.twig' %}
+                {% endfor %}
+
+            </ul>
+
+        </div><!-- /viewport -->
+    </section>
+
+{% endblock %}
+
+
+{% block before_body_end %}
+
+    <script src="https://player.vimeo.com/api/player.js"></script>
+
+{% endblock %}

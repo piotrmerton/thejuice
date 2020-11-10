@@ -1,0 +1,143 @@
+
+/*
+ *	Everything related to projects listings and items (used on Home, Search) 
+ *	see _twig/listing/project.twig directory for markup reference
+ */
+
+//Projects list is a height-based flex layout, height of each element is set per item (see item--project below) */
+.projects__list {
+    display: flex;
+    flex-wrap: wrap;
+
+    //Sketch based magic value that doesn't necessarily correspond to layout grid (i.e. Talents grid is 1680px)
+    //but assures that grid is visually coherent with project; 
+    max-width: 1662px; 
+
+
+    li {	
+        will-change: opacity;
+        transition: opacity .2s ease-in-out;
+
+        //fade out while scroll out of the viewport (but only from the top)
+        &.item--faded {
+            opacity: .1;
+        }
+
+    }
+
+
+
+    //modifiers
+    &:not(.list--filtered) {
+
+        li {
+            //row-based classes added dynamically via JS, see _js/UI.projectsList.mapRows()
+            &:not(.item--faded):not(.item--active):not(:hover) {
+                &.item--last-row {
+                    opacity: .25;
+                }
+                &.item--next-to-last-row {
+                    opacity: .5;
+                }
+                &.item--second-to-last-row {
+                    opacity: .75;
+                }				
+            }
+            
+        }
+
+    }
+
+    &.list--index {
+        .item--project {
+            &.project--big {
+
+                h3 {
+                    @media all and (min-width: $breakpoint_tablet-portrait) {
+                        font-size: 2em;
+                    }
+                }
+
+                img {
+                    @media all and (min-width: $breakpoint_desktop + 1px) {
+                        max-height: 560px;
+                    }
+                    @media all and (max-width: $breakpoint_laptop) {
+                        max-height: 480px;
+                    }
+                }
+            }
+        }		
+    }
+
+
+}
+
+// _twig/listing/item-project.twig
+.item--project {
+
+    //elements
+
+    img {
+        @media all and (min-width: $breakpoint_desktop + 1px) {
+            width: auto;
+            max-height: 280px;
+        }
+        @media all and (max-width: $breakpoint_laptop) {
+            max-height: 240px;
+        }
+    }
+
+
+    .item__meta {
+
+        .ico--audio {
+            width: 7rem;
+            height: auto;
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            margin: auto;
+            transform: translateY(-50%);
+
+            @media all and (max-width: $breakpoint_mobile) {
+                display: none;
+            }
+        }
+
+    }
+
+
+
+    @media all and (max-width: $breakpoint_desktop) {
+
+        width: 50%;
+
+        &.project--big {
+            width: 100%;
+        }
+
+        a,
+        figure {
+            height: 100%;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            max-height: unset
+        }
+
+    }	
+
+    @media all and (max-width: $breakpoint_tablet-portrait - 1px) {
+
+        width: 100%;
+
+
+    }
+
+
+}

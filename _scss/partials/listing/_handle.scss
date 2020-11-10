@@ -1,0 +1,22 @@
+// handle as in "contact" handle or "social media" handle
+
+// _twig/listing/item-handle.twig
+
+.item--handle {
+    a {
+        display: inline-block;
+
+        @media all and (min-width: $breakpoint_mobile) {
+            font-size: 1.125em;
+        }
+        
+
+        @media (hover: hover) {
+
+            &:hover {
+                color: $silver;
+            }
+
+        }
+    }
+}

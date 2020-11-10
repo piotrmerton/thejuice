@@ -1,0 +1,137 @@
+page:
+   slug: project-1
+   content_type: project
+   title: Project 1
+
+project:
+  title: Audi A7 Sportback - Run
+  client: Audi Japan
+  agency: Wieden & Kennedy Tokyo
+  year: 2018
+  desc: “You guys always do explosions, a lot of complicated simulations, etc. but this time we need something opposite, sorry”. With this “accusation” Mewa – our Executive Producer had to deal with before we even hoped for a cooperation. And yet, as much as it is all true, we still love the simplicity and the art of smooth postproduction. And they trusted us. W+K Tokyo, Taiyo Kikaku and amazing Ian Pons Jewell invited us to work with them for Audi Japan and their Audi A7 Sportback model in Japan that focuses on the concept of feeling free.
+
+  gallery:
+    - id: 1
+      type: video
+      thumb:
+        desktop: assets/img/projects/1/thumbs/1.png
+      videoId: 289471204
+      cover: true
+
+    - id: 2
+      type: image
+      thumb:
+        desktop: assets/img/projects/1/thumbs/2.png
+      full: assets/img/projects/1/full/2.png
+
+    - id: 3
+      type: image
+      thumb:
+        desktop: assets/img/projects/1/thumbs/3.png
+      full: assets/img/projects/1/full/3.png
+
+    - id: 4
+      type: image
+      thumb:
+        desktop: assets/img/projects/1/thumbs/4.png
+      full: assets/img/projects/1/full/4.png
+
+    - id: 5
+      type: image
+      thumb:
+        desktop: assets/img/projects/1/thumbs/5.png
+      full: assets/img/projects/1/full/5.png
+
+  credits:
+    - role: Creative Directors
+      people: 
+        - Mike Farr
+        - Tota Hasegawa
+    - role: Creatives
+      people:
+        - Jordi Luna
+        - Takeshi Amata
+        - Jason Scott
+    - role: Producer
+      people:
+        - Kana Wakabayashi
+    - role: Director
+      people:
+        - Ian Pons Jewell
+    - role: Production House
+      people: 
+        - Taiyo Kikaku
+    - role: Producer
+      people:
+        - Isaac Hiramoto Morikoshi
+    - role: Posproduction Studio
+      people:
+        - Juice
+    - role: Producer
+      people:
+        - Michał Dwojak-Hara
+    - role: Art Director
+      people:
+        - Rafał Gosieniecki
+    - role: VFX/CG Supervisor
+      people:
+        - Tomataka Yokoo
+    - role: Online Artist
+      people:
+        - Alex Brodie
+    - role: Modeling/Lightning/Rendering Artists
+      people:
+        - Tomotaka Yokoo
+        - Robert Sundelin
+    - role: FX Artists
+      people:
+        - Robert Sundelin
+        - Kamil Kryński
+    - role: Compositing Artist
+      people:
+        - Tomotaka Yokoo
+    - role: On-set Supervisors
+      people:
+        - Michał Dwojak-Hara
+        - Andrzej Rudź 
+
+  awards:
+    - name: KTR Silver 2018
+      for: Best Director
+      image: 'assets/img/awards/1.png'
+
+    - name: KTR Silver 2018
+      for: Best Director
+      image: 'assets/img/awards/1.png'      
+
+  related:
+    tags:
+      - motion
+      - automotive
+      - commercial
+
+    projects:
+      - id: 2
+        title: 'Bentley UE4'
+        type: video
+        tags:
+           - motion
+           - automotive
+           - commercial
+        url: '#'
+        thumb: 
+           desktop : assets/img/projects/listing/2.png      
+        size: normal
+
+      - id: 3
+        title: 'Toyota C-HR - Crossover The World'
+        type: video
+        tags:
+           - motion
+           - sound
+           - automotive
+           - commercial
+        url: '#'
+        thumb: 
+           desktop : assets/img/projects/listing/3.png       
+        size: normal    

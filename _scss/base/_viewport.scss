@@ -1,0 +1,19 @@
+//generic viewport class constraining content width, treat it as a equivalent of "container" helper class
+
+.viewport {
+    width: 100%;
+    max-width: $viewport_width;		
+
+    // @media all and (max-width: $breakpoint_laptop) {
+    // 	max-width: 1140px;
+    // }
+
+    &.viewport--fullhd {
+        max-width: $breakpoint_fullhd;
+    }
+
+    &.viewport--laptop {
+        max-width: 1360px;
+    }
+}
+

@@ -1,0 +1,30 @@
+<li class="list__item item--address">
+
+    <h2>{{ address.country }}</h2>
+
+    {% for location in address.locations %}
+
+        <address>
+            <h3>{{ location.city }}</h3>
+
+            <p>{{ location.street }}, {{ location.zipcode }}<p>
+
+            <ul class="address__phonenumbers">
+            {% for phone in location.phonenumbers %}
+                <li>{{ phone }}</li>
+            {% endfor %}
+            </ul>
+
+        </address>
+
+    {% endfor %}
+
+
+    <ul class="address__handles">
+        {% for handle in address.handles %}
+            {% include 'item-handle.twig' %}
+        {% endfor %}
+    </ul>	
+    
+
+</li>

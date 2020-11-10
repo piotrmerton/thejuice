@@ -1,0 +1,27 @@
+//assets path defined in utilities/_variables.scss
+
+@font-face {
+    font-family: 'Tungsten SemiBold';
+    src: url('#{$assetsPath}/fonts/TungstenSemibold.eot');
+    src: url('#{$assetsPath}/fonts/TungstenSemibold.eot') format('embedded-opentype'),
+         url('#{$assetsPath}/fonts/TungstenSemibold.woff2') format('woff2'),
+         url('#{$assetsPath}/fonts/TungstenSemibold.woff') format('woff'),
+         url('#{$assetsPath}/fonts/TungstenSemibold.ttf') format('truetype');
+
+    font-weight: 600;
+    font-style: normal;
+}
+
+
+
+@font-face {
+    font-family: 'Caslon Pro';
+    src: url('#{$assetsPath}/fonts/ACaslonProRegular.eot');
+    src: url('#{$assetsPath}/fonts/ACaslonProRegular.eot') format('embedded-opentype'),
+         url('#{$assetsPath}/fonts/ACaslonProRegular.woff2') format('woff2'),
+         url('#{$assetsPath}/fonts/ACaslonProRegular.woff') format('woff'),
+         url('#{$assetsPath}/fonts/ACaslonProRegular.ttf') format('truetype');
+    
+    font-weight: 400;
+    font-style: normal;
+}

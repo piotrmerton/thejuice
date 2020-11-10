@@ -1,0 +1,199 @@
+page:
+   slug: index
+   title: Homepage
+
+filters:
+  - label: Motion
+    slug: motion
+    url: '#'
+
+  - label: Sound
+    slug: sound
+    url: '#'
+
+  - label: Still
+    slug: still
+    url: '#'
+
+projects:
+   # id - integer
+   # title - string
+   # type - string: video/sound/text - determines the behavior of hover, text is non interactive text-only element
+   # tags - array
+   # url - string
+   # thumb - object with desktop/mobile/tablet keys (desktop is required, mobile and tablet are optional), values are string with urls relative to outputted html
+   # size - string, optional - determines the size of thumbnail tile on projects grid, 'normal' (default) is 280px height, 'big' is 560px height
+   -  id: 1
+      title: 'Audi A7 Sportback - Run'
+      type: video
+      tags:
+         - motion
+         - automotive
+         - commercial
+      url: '#'
+      thumb: 
+         desktop : assets/img/projects/listing/1.png
+         mobile : assets/img/projects/listing/1.png
+      size: big
+
+   -  id: 2
+      title: 'Bentley UE4'
+      type: video
+      tags:
+         - motion
+         - automotive
+         - commercial
+      url: '#'
+      thumb: 
+         desktop : assets/img/projects/listing/2.png      
+      size: normal
+
+   -  id: 3
+      title: 'Toyota C-HR - Crossover The World'
+      type: video
+      tags:
+         - motion
+         - sound
+         - automotive
+         - commercial
+      url: '#'
+      thumb: 
+         desktop : assets/img/projects/listing/3.png       
+      size: normal
+
+   -  id: 4
+      title: 'Milkana'
+      type: audio
+      tags:
+         - sound
+      url: '#'
+      thumb: 
+         desktop : assets/img/projects/listing/4.png
+      size: normal
+
+   -  id: 5
+      title: 'TEDxWarsaw 2018 - Men & Women'
+      type: video
+      tags:
+         - motion
+         - sound
+         - automotive
+         - commercial
+      url: '#'
+      thumb: 
+         desktop: assets/img/projects/listing/5.png
+      size: normal
+
+   -  id: null
+      type: text
+      text: Short brake from only visuals is essential
+
+   -  id: 6
+      title: 'Nutrilite - Farm'
+      type: video
+      tags:
+         - motion
+         - commercial
+      url: '#'
+      thumb: 
+          desktop: assets/img/projects/listing/6.png
+      size: normal
+
+   -  id: 7
+      title: 'Pioneer - Smarty Sync'
+      type: video
+      tags:
+         - motion
+         - automotive
+         - commercial
+      url: '#'
+      thumb: 
+          desktop: assets/img/projects/listing/7.png
+      size: normal
+
+   -  id: 8
+      title: 'IPN - The Unconcquered'
+      type: video
+      tags:
+         - motion
+         - animation
+      url: '#'
+      thumb: 
+          desktop: assets/img/projects/listing/8.png
+      size: normal
+
+   -  id: 9
+      title: 'Audi A7 Sportback - Run'
+      type: video
+      tags:
+         - motion
+         - automotive
+         - commercial
+      url: '#'
+      thumb: 
+          desktop: assets/img/projects/listing/9.png
+      size: normal
+
+   -  id: 10
+      title: 'Audi A7 Sportback - Run'
+      type: video
+      tags:
+         - motion
+         - automotive
+         - commercial
+      url: '#'
+      thumb: 
+          desktop: assets/img/projects/listing/10.png
+      size: normal
+
+   -  id: 11
+      title: 'Audi A7 Sportback - Run'
+      type: video
+      tags:
+         - motion
+         - automotive
+         - commercial
+      url: '#'
+      thumb: 
+          desktop: assets/img/projects/listing/11.png
+      size: normal
+
+   -  id: 12
+      title: 'Audi A7 Sportback - Run'
+      type: video
+      tags:
+         - motion
+         - automotive
+         - commercial
+      url: '#'
+      thumb: 
+          desktop: assets/img/projects/listing/12.png
+      size: normal
+
+   -  id: null
+      type: text
+      text: Another break from visuals
+
+   -  id: 13
+      title: 'Audi A7 Sportback - Run'
+      type: video
+      tags:
+         - motion
+         - automotive
+         - commercial
+      url: '#'
+      thumb: 
+          desktop: assets/img/projects/listing/13.png
+      size: normal
+
+   -  id: 14
+      title: 'Audi A7 Sportback - Run'
+      type: video
+      tags:
+         - motion
+         - automotive
+         - commercial
+      url: '#'
+      thumb: 
+          desktop: assets/img/projects/listing/14.png
+      size: big

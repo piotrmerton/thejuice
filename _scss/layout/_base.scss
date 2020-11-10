@@ -1,0 +1,11 @@
+.page-container {
+    @media all and (max-width: $breakpoint_mobile) {
+        //compensate for fixed header__layout
+        //(on desktop we are using sticky so it is not needed)
+
+        &:not(.has--filters) {
+            margin-top: 4.75rem; 
+        }
+        
+    }
+}

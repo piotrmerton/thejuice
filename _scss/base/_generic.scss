@@ -1,0 +1,51 @@
+//default style of generic html elements
+
+body {
+    font-family: 'Caslon Pro', serif;
+    font-size: 1em;
+    background: $black;
+    color: $silver;
+
+
+    //move padding down the DOM, i.e. to .page-container to not affect modals?
+
+    padding: 0 $body-horizontal-padding;
+
+    @media all and (max-width: $breakpoint_laptop) {
+        padding: 0 $body-horizontal-padding-laptop;
+    }
+    @media all and (max-width: $breakpoint_mobile) {
+        padding: 0 $body-horizontal-padding-mobile;
+    }	
+}
+
+a {
+    color: $silver;
+    text-decoration: none;
+    transition: color 100ms ease-in-out;
+
+    @media (hover: hover) {
+
+        &:hover {
+            color: $white;
+        }
+
+    }
+
+}
+
+
+ul {
+    list-style-type: none
+}
+
+
+img {
+    width: 100%;
+    vertical-align: bottom;
+}
+
+
+address {
+    font-style: normal;
+}

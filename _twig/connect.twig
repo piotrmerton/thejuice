@@ -1,0 +1,73 @@
+{% extends "layout/base.twig" %}
+
+{% block content %}
+
+    <section class="content__section section-contact">
+        <div class="viewport viewport--fullhd">
+
+            <div class="section__header">
+                <h1>We are The Juice</h1>
+            </div>
+
+            <div class="section__grid grid--content">
+
+
+                <div class="grid__item item--about">
+
+                    <p>Juice, founded in 2006 in Poland, is one of the leading, independently owned design and postproduction companies in the region, with offices in Wrocław, Warsaw, and Tokyo. Our 70+ creatives located worldwide, make up a wealth of talent, highly experienced VFX and CGI artists, multi-media specialists, art directors, designers and sound designers, specialized in animation, compositing, color grading, concept art and character design. We’re helping some of the most influential brands to become stronger. Our client list includes BMW, Coca-Cola, Crispin Porter + Bogusky, EA, Fiat, History Channel, Nike, Mitsubishi, SABMiller, Stink London, Toyota, T-Mobile, Virgin Mobile.</p>
+
+                    <p>Have a sip!</p>
+
+                    <ul class="social-media__list">
+
+                        {% for handle in socialmedia_handles %}
+                            <li class="list__item item--handle">
+                                <a href="{{ handle.url }}">{{ handle.label }}</a>
+                                {% if handle.qr %}
+                                    <figure class="item__qr">
+                                        <img src="{{ handle.qr }}" />
+                                    </figure>
+                                {% endif %}
+                            </li>
+                        {% endfor %}
+
+                    </ul>
+
+                </div>
+
+
+                <div class="grid__item item--people">
+
+                    <ul class="item__subgrid handles__list">
+
+                        {% for handle in people_handles %}
+
+                            {% include 'listing/item-handle.twig' %}
+
+                        {% endfor %}
+
+                    </ul>
+
+                </div>
+
+                <div class="grid__item item--addresses">
+
+                    <ul class="item__subgrid addresses__list">
+
+                        {% for address in addresses %}
+
+                            {% include 'listing/item-address.twig' %}
+
+                        {% endfor %}
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+
+        </div><!-- /viewport -->
+    </section>
+
+{% endblock %}

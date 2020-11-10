@@ -1,0 +1,38 @@
+page:
+   slug: search-results
+   title: Search results
+
+search_query: Autobus
+
+filters:
+  - label: Motion
+    slug: motion
+    url: '#'
+
+  - label: Sound
+    slug: sound
+    url: '#'
+
+  - label: Still
+    slug: still
+    url: '#'
+
+  - label: Director
+    slug: director
+    url: '#'
+
+  - label: Automotive
+    slug: automotive
+    url: '#'
+
+  - label: Animation
+    slug: animation
+    url: '#'
+
+  - label: Commercial
+    slug: commercial
+    url: '#'
+
+  - label: Trailer
+    slug: trailer
+    url: '#'

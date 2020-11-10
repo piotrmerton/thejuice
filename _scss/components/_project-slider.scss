@@ -1,0 +1,64 @@
+// twig/components/project-slider.twig
+
+.project__slider {
+    height: 100%;
+    position: relative;
+    
+    .slider__list {
+        height: 100%;
+        .slide__item {
+            height: 100%;
+        }
+    }
+
+    .slider__nav {
+        position: absolute;
+        top: 50%;
+        margin-top: -2rem;
+        width: 100%;
+
+        .nav__item {
+            display: block;
+            position: absolute;
+            cursor: pointer;
+            
+
+            top: 0;
+
+            .ui-ico {
+                width: 2rem;
+                height: 4rem;
+
+                opacity: .5;
+                will-change: opacity;
+                transition: all .2s ease-in-out;
+
+            }
+
+            &[aria-disabled="true"] {
+                visibility: hidden;
+            }
+
+            &.item--next {
+                right: 0;
+            }
+            &.item--prev {
+                left: 0;
+                transform: rotate(-180deg);
+            }
+
+            @media (hover: hover) {
+                &:hover {
+                    
+
+                    .ui-ico {
+                        opacity: 1;
+                        transform: scale(.8);						
+                    }
+
+                }
+            }
+        }
+    }
+
+}

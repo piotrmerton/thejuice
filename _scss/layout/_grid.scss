@@ -1,0 +1,52 @@
+$grid-gap-desktop: 5rem;
+$grid-gap-laptop: 3.75rem;
+$grid-gap-mobile: 3.25rem;
+
+
+%grid-default {
+    display: grid;
+    grid-column-gap: $grid-gap-desktop;
+
+    @media all and (max-width: $breakpoint_laptop) {
+        grid-column-gap: $grid-gap-laptop;
+    }
+
+    @media all and (max-width: $breakpoint_desktop) {
+        grid-column-gap: $grid-gap-mobile;
+    }    
+}
+
+.grid--content {
+
+    @extend %grid-default;
+    grid-template-columns: repeat(12, 1fr);
+
+    @media all and (max-width: $breakpoint_mobile) {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+}
+
+.grid--two-columns {
+    
+    @extend %grid-default;
+
+    grid-template-columns: 1fr 1fr;
+    grid-row-gap: 2rem;
+
+
+    @media all and (max-width: $breakpoint_desktop) {
+        grid-template-columns: 1fr;
+    }
+
+    &.columns--tablet {
+        @media all and (min-width: $breakpoint_tablet-portrait) {
+            grid-template-columns: 1fr 1fr;
+        }
+    }    
+
+}
+
+
+
+

@@ -1,0 +1,77 @@
+page:
+   slug: search-results
+   title: Search results
+
+search_query: Automotive
+
+filters:
+  - label: Motion
+    slug: motion
+    url: '#'
+
+  - label: Sound
+    slug: sound
+    url: '#'
+
+  - label: Still
+    slug: still
+    url: '#'
+
+  - label: Director
+    slug: director
+    url: '#'
+
+  - label: Automotive
+    slug: automotive
+    url: '#'
+
+  - label: Animation
+    slug: animation
+    url: '#'
+
+  - label: Commercial
+    slug: commercial
+    url: '#'
+
+  - label: Trailer
+    slug: trailer
+    url: '#'
+
+search_results:
+   -  id: 1
+      title: 'Audi A7 Sportback - Run'
+      type: video
+      tags:
+         - motion
+         - automotive
+         - commercial
+      url: '#'
+      thumb: 
+         desktop : assets/img/projects/listing/1.png
+         mobile : assets/img/projects/listing/1.png
+      size: big
+      
+   -  id: 2
+      title: 'Bentley UE4'
+      type: video
+      tags:
+         - motion
+         - automotive
+         - commercial
+      url: '#'
+      thumb: 
+         desktop : assets/img/projects/listing/2.png      
+      size: normal
+
+   -  id: 3
+      title: 'Toyota C-HR - Crossover The World'
+      type: video
+      tags:
+         - motion
+         - sound
+         - automotive
+         - commercial
+      url: '#'
+      thumb: 
+         desktop : assets/img/projects/listing/3.png       
+      size: normal        

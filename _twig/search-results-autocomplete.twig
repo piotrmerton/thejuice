@@ -1,0 +1,42 @@
+{% extends "layout/base.twig" %}
+
+{% block header %}
+    {% embed 'layout/header.twig' with { back : '#back-url' }%}
+
+        {% block filters %}
+
+            {% if filters is defined %}
+
+                {#
+                    autocomplete phrase is trimmed only for prototype reasons, ideally you want some additional real time logic to compare
+                    user input (query) with autocomplete suggestion and display only the difference
+                #}
+
+                {% include 'components/filters.twig' with { css : 'header__filters', search_results : true, search_query : 'automot', autocomplete : 'ive' } %}
+            {% endif %}
+
+        {% endblock %}
+
+    {% endembed %}
+{% endblock %}
+
+
+{% block content %}
+
+    <section class="content__section section-search-results">
+        <div class="viewport">
+            <ul class="projects__list list--filtered list--autocomplete list--ui">
+
+                {% for project in search_results %}
+
+                    {% include 'listing/item-project.twig' with { active : true } %}
+
+                {% endfor %}
+
+            </ul>
+        </div>
+    </section>
+
+{% endblock %}
+
+
