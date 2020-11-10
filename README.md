@@ -1,8 +1,6 @@
 # thejuice
 
-Front-end coding based on Sketch files provided by the external client
-
-![Preview](preview.webp)
+Front-end development based on Sketch files provided by the external client
 
 ## Preview
 * [Homepage](https://piotrmerton.github.io/thejuice/index.html)
@@ -19,3 +17,4 @@ Front-end coding based on Sketch files provided by the external client
 * [Search results - multiple filters](https://piotrmerton.github.io/thejuice/search-results-multiple-filters.html)
 * [Search results - error message](https://piotrmerton.github.io/thejuice/search-results-message.html)
 
+![Preview](preview.webp)
