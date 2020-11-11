@@ -1,6 +1,12 @@
 # thejuice
 
-Front-end development based on Sketch files provided by the external client
+Front-end development based on Sketch files provided by the external client.
+
+## Tools used:
+* webpack
+* Babel
+* SASS
+* Twig
 
 ## Preview
 * [Homepage](https://piotrmerton.github.io/thejuice/index.html)
